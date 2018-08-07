@@ -6,11 +6,11 @@ public class Hello {
 
     @Log
     public static void main(String[] args) {
-        System.out.println(System.getProperty("idThread"));
+        System.out.println("main");
         print();
     }
 
-    @Log
+//    @Log
     public static void print() {
         System.out.println("Hello");
     }
