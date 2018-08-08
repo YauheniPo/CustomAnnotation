@@ -1,6 +1,6 @@
 package com.cloudogu.blog.annotationprocessor.sample;
 
-import com.cloudogu.blog.annotationprocessor.log.Log;
+import epam.popovich.annotation.log.Log;
 
 public class Hello {
 

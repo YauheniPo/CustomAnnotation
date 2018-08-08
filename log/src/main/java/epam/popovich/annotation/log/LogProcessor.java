@@ -1,4 +1,4 @@
-package com.cloudogu.blog.annotationprocessor.log;
+package epam.popovich.annotation.log;
 
 import com.sun.tools.javac.code.Flags;
 import com.sun.tools.javac.model.JavacElements;
@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.Set;
 
-@SupportedAnnotationTypes("com.cloudogu.blog.annotationprocessor.log.Log")
+@SupportedAnnotationTypes("epam.popovich.annotation.log.Log")
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class LogProcessor extends AbstractProcessor {
 
@@ -34,7 +34,7 @@ public class LogProcessor extends AbstractProcessor {
                 JavacElements utils = javacProcessingEnv.getElementUtils();
                 JCTree blockNode = utils.getTree(element);
 
-                TreeMaker maker  = TreeMaker.instance(javacProcessingEnv.getContext());
+                TreeMaker maker = TreeMaker.instance(javacProcessingEnv.getContext());
 
                 // Новое тело метода
                 List<JCTree.JCStatement> newStatements = List.nil();
@@ -140,19 +140,19 @@ public class LogProcessor extends AbstractProcessor {
         // Создаём блок вычисления затраченного времени (currentTime - startTime)
         JCTree.JCExpression currentTime = makeCurrentTime(maker, utils, log);
         JCTree.JCExpression elapsedTime = maker.Binary(com.sun.tools.javac.tree.JCTree.Tag.MINUS, currentTime, maker.Ident(var.name));
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE,"elapsedTime: " + elapsedTime);
+        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "elapsedTime: " + elapsedTime);
 
         // Собираем все кусочки вместе
         List<JCTree.JCExpression> printArgs = List.nil();
         printArgs = printArgs.append(elapsedTime);
         JCTree.JCExpression print = maker.Apply(List.<JCTree.JCExpression>nil(), printlnExpression, printArgs);
 
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE,"print: " + print);
+        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "print: " + print);
         JCTree.JCExpressionStatement stmt = maker.Exec(print);
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE,"stmt: " + stmt);
+        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "stmt: " + stmt);
         List<JCTree.JCStatement> stmts = List.nil();
         stmts = stmts.append(stmt);
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE,"stmts: " + stmts);
+        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "stmts: " + stmts);
         return maker.Block(0, stmts);
     }
 }
