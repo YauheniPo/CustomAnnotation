@@ -13,5 +13,6 @@ public class Hello {
 //    @Log
     public static void print() {
         System.out.println("Hello");
+        System.out.println(HelloAutogenerate.class.getName());
     }
 }
