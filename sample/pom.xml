@@ -12,28 +12,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
+    <repositories>
+        <repository>
+            <id>epam-popovich-log</id>
+            <name>repo-maven-popovich</name>
+            <url>https://github.com/YauheniPo/git_jar_for_maven/tree/master/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 
-        <!--<dependency>-->
-            <!--<groupId>epam.popovich.annotation</groupId>-->
-            <!--<artifactId>log</artifactId>-->
-            <!--<version>1.0</version>-->
-        <!--</dependency>-->
+    <dependencies>
         <dependency>
             <groupId>epam.popovich.annotation</groupId>
             <artifactId>log</artifactId>
             <version>1.0</version>
-            <systemPath>${project.basedir}/libs/log-1.0.jar</systemPath>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <!--<repository>-->
-            <!--<id>in-project</id>-->
-            <!--<name>In Project Repo</name>-->
-            <!--<url>file://${project.basedir}/libs</url>-->
-        <!--</repository>-->
-    </repositories>
 
     <build>
         <plugins>
