@@ -7,6 +7,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <java.version>1.8</java.version>
+        <github.global.server>github</github.global.server>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
