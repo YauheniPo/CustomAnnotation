@@ -17,10 +17,10 @@
             <id>epam-popovich-log</id>
             <name>repo-maven-popovich</name>
             <url>https://github.com/YauheniPo/git_jar_for_maven/tree/master/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
+            <!--<snapshots>-->
+                <!--<enabled>true</enabled>-->
+                <!--<updatePolicy>always</updatePolicy>-->
+            <!--</snapshots>-->
         </repository>
     </repositories>
 
