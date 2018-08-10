@@ -10,9 +10,7 @@ public class Hello {
         print();
     }
 
-//    @Log
     public static void print() {
-        System.out.println("Hello");
         System.out.println(HelloAutogenerate.class.getName());
     }
 }
