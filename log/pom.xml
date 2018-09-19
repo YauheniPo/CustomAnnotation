@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>epam.popovich.annotation</groupId>
     <artifactId>log</artifactId>
-    <version>1.0</version>
+    <version>1.0.RELEASE</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -69,21 +69,18 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <fork>true</fork>
-                    <executable>${java.home}/../bin/javac</executable>
+                    <!--<fork>true</fork>-->
+                    <!--<executable>${java.home}/../bin/javac</executable>-->
                     <compilerArgument>-proc:none</compilerArgument>
                 </configuration>
-                <!--<configuration>-->
-                    <!--<source>1.8</source>-->
-                    <!--<target>1.8</target>-->
-                <!--</configuration>-->
+
                 <!--<executions>-->
                     <!--<execution>-->
                         <!--<id>default-compile</id>-->
                         <!--<configuration>-->
                             <!--<compilerArgument>-proc:none</compilerArgument>-->
                             <!--<includes>-->
-                                <!--<include>LogProcessor.java</include>-->
+                                <!--<include>epam/popovich/annotation/log/LogProcessor.java</include>-->
                             <!--</includes>-->
                         <!--</configuration>-->
                     <!--</execution>-->

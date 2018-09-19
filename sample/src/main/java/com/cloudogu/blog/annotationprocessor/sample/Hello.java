@@ -7,10 +7,15 @@ public class Hello {
     @Log
     public static void main(String[] args) {
         System.out.println("main");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         print();
     }
 
     public static void print() {
-        System.out.println(HelloAutogenerate.class.getName());
+//        System.out.println(HelloAutogenerate.class.getName());
     }
 }

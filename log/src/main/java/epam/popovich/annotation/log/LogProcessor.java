@@ -84,21 +84,21 @@ public class LogProcessor extends AbstractProcessor {
                 ((JCTree.JCMethodDecl) blockNode).body.stats = newStatements;
 
                 // Создание java файла
-                TypeElement clazz = (TypeElement) element.getEnclosingElement();
-                String pack = clazz.getQualifiedName().toString();
-                try {
-                    JavaFileObject f = processingEnv.getFiler().createSourceFile(clazz.getQualifiedName() + "Autogenerate");
-                    processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "Creating " + f.toUri());
-                    try (Writer w = f.openWriter()) {
-                        PrintWriter pw = new PrintWriter(w);
-                        pw.println("package " + pack.substring(0, pack.lastIndexOf('.')) + ";");
-                        pw.println("\npublic class " + clazz.getSimpleName() + "Autogenerate {");
-                        pw.println("}");
-                        pw.flush();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                TypeElement clazz = (TypeElement) element.getEnclosingElement();
+//                String pack = clazz.getQualifiedName().toString();
+//                try {
+//                    JavaFileObject f = processingEnv.getFiler().createSourceFile(clazz.getQualifiedName() + "Autogenerate");
+//                    processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "Creating " + f.toUri());
+//                    try (Writer w = f.openWriter()) {
+//                        PrintWriter pw = new PrintWriter(w);
+//                        pw.println("package " + pack.substring(0, pack.lastIndexOf('.')) + ";");
+//                        pw.println("\npublic class " + clazz.getSimpleName() + "Autogenerate {");
+//                        pw.println("}");
+//                        pw.flush();
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
 
                 processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "found @Log at " + element);
                 processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, "found @Log at " + log.name());
