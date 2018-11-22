@@ -1,4 +1,4 @@
-package epam.popovich.annotation.log;
+package epam.popovich.annotation.time;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,14 +7,11 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Log {
-    String className() default "String";
+public @interface TrackTime {
 
     String name() default "default_name";
 
     String value() default "default_value";
-
-    int type() default 0;
 
     enum TimeInterval {MILLISECOND, NANOSECOND}
 

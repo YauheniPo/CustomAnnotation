@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.cloudogu.blog</groupId>
+    <groupId>popovich-check-annotation</groupId>
     <artifactId>main</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -16,23 +16,20 @@
 
     <repositories>
         <repository>
-            <id>epam-popovich-log</id>
+            <id>epam-popovich-tracktime</id>
             <name>repo-maven-popovich</name>
             <url>https://github.com/YauheniPo/git_jar_for_maven/tree/master/</url>
-            <!--<snapshots>-->
-                <!--<enabled>true</enabled>-->
-                <!--<updatePolicy>always</updatePolicy>-->
-            <!--</snapshots>-->
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>epam.popovich.annotation</groupId>
-            <artifactId>log</artifactId>
-            <version>1.0</version>
+            <artifactId>track-time</artifactId>
+            <version>1.1.RELEASE</version>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

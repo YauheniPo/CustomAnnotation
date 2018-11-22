@@ -1,10 +1,10 @@
-package com.cloudogu.blog.annotationprocessor.sample;
+package com.popovich.example;
 
-import epam.popovich.annotation.log.Log;
+import epam.popovich.annotation.time.TrackTime;
 
 public class Hello {
 
-    @Log
+    @TrackTime
     public static void main(String[] args) {
         System.out.println("main");
         try {
@@ -12,10 +12,5 @@ public class Hello {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        print();
-    }
-
-    public static void print() {
-//        System.out.println(HelloAutogenerate.class.getName());
     }
 }
