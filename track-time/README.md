@@ -1,6 +1,6 @@
 # CustomAnnotation
 
-mvn deploy - in the project (TrackTime) to console for deploy in the JAR (target/mvn-repo/all_files(.sha1, .md5, .pom, .jar))
+_**mvn deploy**_ - in the project (TrackTime) to console for deploy in the JAR (target/mvn-repo/all_files(.sha1, .md5, .pom, .jar))
 
 token in .m2/settings.xml from gitaccount-settings-developer settings privileges: 
 repo - Full control of private repositories 
