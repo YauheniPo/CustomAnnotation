@@ -21,12 +21,24 @@
             <!--<version>1.6.0</version>-->
             <!--<scope>system</scope>-->
             <!--<systemPath>${basedir}/src/main/resources/dependencies/tools.jar</systemPath>-->
+            <!--<systemPath>${env.JAVA_HOME}\lib\tools.jar</systemPath>-->
         <!--</dependency>-->
         <dependency>
-            <groupId>net.openhft</groupId>
-            <artifactId>chronicle-map</artifactId>
-            <version>3.16.0</version>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>2.7.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>jdk.tools</groupId>
+                    <artifactId>jdk.tools</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>net.openhft</groupId>-->
+            <!--<artifactId>chronicle-map</artifactId>-->
+            <!--<version>3.16.0</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <repositories>
