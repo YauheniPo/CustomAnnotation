@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>epam.popovich.annotation</groupId>
     <artifactId>track-time</artifactId>
-    <version>1.5.RELEASE</version>
+    <version>1.6.RELEASE</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -15,30 +15,30 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.sun</groupId>
-            <artifactId>tools</artifactId>
-            <version>1.6.0</version>
-            <scope>system</scope>
-            <!--<systemPath>${basedir}/src/main/resources/dependencies/tools.jar</systemPath>-->
-            <systemPath>${env.JAVA_HOME}\lib\tools.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>2.7.2</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>jdk.tools</groupId>
-                    <artifactId>jdk.tools</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         <!--<dependency>-->
-            <!--<groupId>net.openhft</groupId>-->
-            <!--<artifactId>chronicle-map</artifactId>-->
-            <!--<version>3.16.0</version>-->
+        <!--<groupId>com.sun</groupId>-->
+        <!--<artifactId>tools</artifactId>-->
+        <!--<version>RELEASE</version>-->
+        <!--<scope>system</scope>-->
+            <!--<systemPath>${basedir}/src/main/resources/dependencies/tools.jar</systemPath>-->
+        <!--<systemPath>${env.JAVA_HOME}\lib\tools.jar</systemPath>-->
         <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.hadoop</groupId>-->
+            <!--<artifactId>hadoop-common</artifactId>-->
+            <!--<version>2.7.2</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>jdk.tools</groupId>-->
+                    <!--<artifactId>jdk.tools</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>net.openhft</groupId>
+            <artifactId>chronicle-map</artifactId>
+            <version>3.16.0</version>
+        </dependency>
     </dependencies>
 
     <repositories>
@@ -110,4 +110,26 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>tools.jar</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.sun</groupId>
+                                <artifactId>tools</artifactId>
+                                <version>RELEASE</version>
+                                <scope>system</scope>
+                                <systemPath>${java.home}/../lib/tools.jar</systemPath>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
