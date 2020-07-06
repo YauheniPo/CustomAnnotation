@@ -1,6 +1,7 @@
 # CustomAnnotation
 
 _**mvn deploy**_ - in the project (TrackTime) to console for deploy in the JAR (target/mvn-repo/all_files(.sha1, .md5, .pom, .jar))
+_**mvn deploy -Dregistry=https://maven.pkg.github.com/YauheniPo -Dtoken=GH_TOKEN**_ -
 
 token in .m2/settings.xml from gitaccount-settings-developer settings privileges: 
 repo - Full control of private repositories 
@@ -99,4 +100,15 @@ than mvn --encrypt-password [password]
         </plugins>
     </build>
 </project>
+```
+
+for pom.xml
+```
+<distributionManagement>
+    <repository>
+        <id>github</id>
+        <name>track-time</name>
+        <url>https://maven.pkg.github.com/YauheniPo/CustomAnnotation</url>
+    </repository>
+</distributionManagement>
 ```
